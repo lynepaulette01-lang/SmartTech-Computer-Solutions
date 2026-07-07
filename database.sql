@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS smarttech_solutions;
+
+USE smarttech_solutions;
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  full_name VARCHAR(100) NOT NULL,
+  email VARCHAR(150) NOT NULL,
+  phone VARCHAR(30) NULL,
+  service VARCHAR(60) NOT NULL,
+  message TEXT NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

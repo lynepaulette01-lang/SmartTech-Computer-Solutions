@@ -125,12 +125,26 @@ form {
   max-width: 600px;
 }
 
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
 input, textarea, select {
   width: 100%;
   padding: 10px;
   margin-bottom: 12px;
   border: 1px solid var(--border);
   border-radius: 6px;
+  font: inherit;
+}
+
+input.input-error,
+textarea.input-error,
+select.input-error {
+  border-color: #dc2626;
+  outline: 2px solid rgba(220, 38, 38, 0.12);
 }
 
 button {
@@ -140,6 +154,75 @@ button {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.75;
+}
+
+.form-status {
+  border-radius: 6px;
+  font-weight: 600;
+  margin: 0 0 14px;
+  padding: 10px 12px;
+}
+
+.form-status.success {
+  background: #dcfce7;
+  border: 1px solid #86efac;
+  color: #166534;
+}
+
+.form-status.error {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  color: #991b1b;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.contact-layout form {
+  max-width: none;
+}
+
+.contact-card {
+  position: sticky;
+  top: 20px;
+}
+
+.faq-list {
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+.faq-item summary {
+  color: var(--primary);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.faq-item p {
+  margin-bottom: 0;
+}
+
+.faq-cta {
+  margin-top: 24px;
 }
 
 table {
@@ -173,4 +256,18 @@ footer {
 
 footer a {
   color: var(--secondary);
+}
+
+@media (max-width: 760px) {
+  .hero {
+    padding: 20px 20px 45px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    position: static;
+  }
 }
